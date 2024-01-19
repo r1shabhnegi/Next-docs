@@ -29,8 +29,8 @@ export const users = [
   },
   {
     "id": "1",
-    "name": "Rishabh",
-    "email": "rishabhnegi175@gmail.com",
-    "password": "rishabhnegi"
+    "name": "Rishabh Negi",
+    "email": "Rishabhnegi175@gmail.com",
+    "password": "affafaf"
   }
 ]
