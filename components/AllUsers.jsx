@@ -2,28 +2,30 @@
 import { List, ListItem, Card } from '@material-tailwind/react';
 import { useEffect, useState } from 'react';
 const AllUsers = () => {
-  const [users, setUSers] = useState('');
+  const [users, setUsers] = useState('');
 
   useEffect(() => {
     const fetchAllUsers = async () => {
-      const response = await fetch('api/users');
+      const response = await fetch('/api/users');
       const usersInfo = await response.json();
-      setUSers(usersInfo.data);
+      setUsers(usersInfo.data);
     };
     fetchAllUsers();
   }, []);
+
+  console.log(users);
   return (
     <div>
       {users &&
-        users.map((user) => {
+        users.map((user) => (
           <Card
             key={user.id}
             className='mb-4'>
             <List>
               <ListItem>{user.name}</ListItem>
             </List>
-          </Card>;
-        })}
+          </Card>
+        ))}
     </div>
   );
 };
